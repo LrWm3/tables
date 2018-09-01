@@ -13,6 +13,8 @@ $config = new \PHRETS\Configuration;
 $config->setLoginUrl($endpoint->url)->setUsername($endpoint->user)->setPassword($endpoint->pass)->setRetsVersion($endpoint->version);
 $rets = new \PHRETS\Session($config);
 
+$connect = $rets->Login();
+
 if (!$connect) {
 	die($rets->Error());
 }
